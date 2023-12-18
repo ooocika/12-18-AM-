@@ -1,0 +1,29 @@
+class Complex{
+private:
+double real, img;
+
+double get_number(const char* str, int from, int to);
+
+public:
+Complex(double real, double img) : real(real) , img(img){}
+Complex(const Complex& c) {real = c.real, img = c.img;}
+Complex(const char* str);
+
+Complex operator+(const Complex& c);
+Complex operator-(const Complex& c);
+Complex operator/(const Complex& c);
+Complex operator*(const Complex& c);
+
+Complex operator+=(const Complex& c);
+Complex operator-=(const Complex& c);
+Complex operator*=(const Complex& c);
+Complex operator/=(const Complex& c);
+
+Complex operator=(const Complex& c);
+
+friend Complex operator+(const Complex& a, const Complex& b);
+
+void println(){
+  std::cout << "<" << real << "," << img << " ) " <<std::endl;
+}
+};
